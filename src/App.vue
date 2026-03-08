@@ -249,4 +249,117 @@ const pdfUrl = new URL('./assets/简历.pdf', import.meta.url).href
     padding: 18px 14px 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .app-sidebar {
+    padding: 12px 10px;
+  }
+
+  .brand {
+    padding: 6px 6px 10px;
+    gap: 8px;
+  }
+
+  .brand__avatar {
+    width: 50px;
+    height: 60px;
+    margin-left: 10px;
+  }
+
+  .brand__name {
+    font-size: 24px !important;
+    margin-left: 10px !important;
+  }
+
+  .nav {
+    gap: 4px;
+    padding: 6px 6px 0;
+  }
+
+  .nav__item {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .nav__icon {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .nav__text {
+    font-size: 14px;
+  }
+
+  .sidebar-footer {
+    padding: 10px 6px 0;
+  }
+
+  .sidebar-footer__link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .app-main {
+    padding: 14px 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-sidebar {
+    padding: 10px 8px;
+  }
+
+  .brand {
+    padding: 4px 4px 8px;
+  }
+
+  .brand__avatar {
+    width: 40px;
+    height: 50px;
+    margin-left: 6px;
+    border-radius: 10px;
+  }
+
+  .brand__name {
+    font-size: 20px !important;
+    margin-left: 6px !important;
+  }
+
+  .nav {
+    gap: 3px;
+    padding: 4px 4px 0;
+  }
+
+  .nav__item {
+    padding: 6px 8px;
+    gap: 6px;
+    border-radius: 10px;
+  }
+
+  .nav__icon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .nav__text {
+    font-size: 13px;
+  }
+
+  .sidebar-footer {
+    padding: 8px 4px 0;
+  }
+
+  .sidebar-footer__link {
+    padding: 6px 8px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .app-main {
+    padding: 10px 8px 12px;
+  }
+}
 </style>

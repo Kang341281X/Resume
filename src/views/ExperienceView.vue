@@ -5,10 +5,12 @@ import { ref } from 'vue'
 const showAaaaiImages = ref(false)
 const showImages = ref(false)
 
-// 修正图片资源路径（应放在 public/img/ 下，使用相对路径访问）
-const aaaai1 = '/img/AAAI1.jpg'
-const aaaai2 = '/img/AAAI2.jpg'
-const lcfc = '/img/LCFC.jpg'
+// 图片资源路径
+import aaaai1 from '../assets/img/AAAI1.jpg'
+import aaaai2 from '../assets/img/AAAI2.jpg'
+import lcfc from '../assets/img/LCFC.jpg'
+import lcfcexit from '../assets/img/实习证明.jpg'
+
 </script>
 
 <template>
@@ -17,32 +19,28 @@ const lcfc = '/img/LCFC.jpg'
     <div class="experience-section">
       <div class="panel__content">
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">论文：</span>
-          <span class="info-value" style="width: 950px;">
+          <span class="info-label">论文：</span>
+          <span class="info-value info-value--long">
             Compression Artifacts Removal for VVC with Frequency Domain Mixture of Experts Network
           </span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">会议：</span>
+          <span class="info-label">会议：</span>
           <span class="info-value">AAAI 2026（CCF A 类顶会，本人二作，导师一作）</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">状态：</span>
+          <span class="info-label">状态：</span>
           <span class="info-value">已收录</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">方向：</span>
+          <span class="info-label">方向：</span>
           <span class="info-value">深度学习、计算机视觉、图像恢复、压缩伪影去除</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">网址：</span>
+          <span class="info-label">网址：</span>
           <span class="info-value">
-            <a
-              href="https://github.com/Kang341281X/ARMoE"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="custom-link"
-            >
+            <a href="https://github.com/Kang341281X/ARMoE" target="_blank" rel="noopener noreferrer"
+              class="custom-link">
               https://github.com/Kang341281X/ARMoE
             </a>
           </span>
@@ -54,11 +52,11 @@ const lcfc = '/img/LCFC.jpg'
           </button>
           <transition name="fade">
             <div v-show="showAaaaiImages" class="paper-image-list">
-              <div class="paper-image-wrapper" style="margin-right: -300px;">
-                <img :src="aaaai1" alt="AAAI1" class="paper-img paper-img-uniform"/>
+              <div class="paper-image-wrapper paper-image-wrapper--first">
+                <img :src="aaaai1" alt="AAAI1" class="paper-img paper-img-uniform" />
               </div>
               <div class="paper-image-wrapper">
-                <img :src="aaaai2" alt="AAAI2" class="paper-img paper-img-uniform"/>
+                <img :src="aaaai2" alt="AAAI2" class="paper-img paper-img-uniform" />
               </div>
             </div>
           </transition>
@@ -69,21 +67,21 @@ const lcfc = '/img/LCFC.jpg'
     <div class="experience-section">
       <div class="panel__content">
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">论文：</span>
-          <span class="info-value" style="width: 950px;">
+          <span class="info-label">论文：</span>
+          <span class="info-value info-value--long">
             LFTNet: Long-Range Fourier-Gate Transformer for Efficient Lightweight Image Super-Resolution
           </span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">会议：</span>
+          <span class="info-label">会议：</span>
           <span class="info-value">IJCAI 2026（CCF A 类顶会，本人一作）</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">状态：</span>
+          <span class="info-label">状态：</span>
           <span class="info-value">投稿中</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">方向：</span>
+          <span class="info-label">方向：</span>
           <span class="info-value">深度学习、计算机视觉、图像恢复、轻量级图像超分辨率</span>
         </div>
       </div>
@@ -92,44 +90,50 @@ const lcfc = '/img/LCFC.jpg'
     <div class="experience-section">
       <div class="panel__content">
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">专利：</span>
-          <span class="info-value" style="width: 950px;">
+          <span class="info-label">专利：</span>
+          <span class="info-value info-value--long">
             基于频域混合专家网络的图像压缩伪影去除方法
           </span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">状态：</span>
+          <span class="info-label">状态：</span>
           <span class="info-value">初审阶段，NO.202511956170.1</span>
         </div>
       </div>
     </div>
 
-    <br/>
+    <br />
 
     <h1 class="page__title">实习经历</h1>
     <div class="experience-section">
       <div class="panel__content">
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">公司：</span>
-          <span class="info-value" style="width: 950px;">
+          <span class="info-label">公司：</span>
+          <span class="info-value info-value--long">
             联宝电子科技有限公司
           </span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">职位：</span>
+          <span class="info-label">职位：</span>
           <span class="info-value">AI Agent算法实习生</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label" style="margin-right: -40px;">时间：</span>
+          <span class="info-label">时间：</span>
           <span class="info-value">2025.12 - 2026.3</span>
         </div>
         <div class="work-content">
           <div class="work-item">
             <div class="work-title">工作内容一：工业大脑之流程编排系统优化</div>
             <ul class="work-list">
-              <li>参与搭建并落地由LLM驱动的贴标机流程自动化生成系统，实现Agent统一编排自动化流程：配置驱动的LLM→Mermaid→MBC.MCP渲染流水线，批量生成1–7种标签贴取JSON流程文件并自动输出可视化报告；</li>
-              <li>构建7步Prompt思维链和few-shot引导，针对Mermaid输出引入MermaidChecker做样式完整性校验，并叠加Mermaid语法校验与错误重试机制，降低LLM生成流程的"不可渲染、格式漂移和流程不守恒"概率；</li>
-              <li>实现批量任务并发生成与可视化报告自动汇总，基于ProcessPoolExecutor实现多任务并发调度，支持批量生成不同数量标签的贴取流程，并编写工具脚本将Mermaid解析为动作序列，最终完成多张流程图的自动拼接。</li>
+              <li>
+                参与搭建并落地由LLM驱动的贴标机流程自动化生成系统，实现Agent统一编排自动化流程：配置驱动的LLM→Mermaid→MBC.MCP渲染流水线，批量生成1–7种标签贴取JSON流程文件并自动输出可视化报告；
+              </li>
+              <li>
+                构建7步Prompt思维链和few-shot引导，针对Mermaid输出引入MermaidChecker做样式完整性校验，并叠加Mermaid语法校验与错误重试机制，降低LLM生成流程的"不可渲染、格式漂移和流程不守恒"概率；
+              </li>
+              <li>
+                实现批量任务并发生成与可视化报告自动汇总，基于ProcessPoolExecutor实现多任务并发调度，支持批量生成不同数量标签的贴取流程，并编写工具脚本将Mermaid解析为动作序列，最终完成多张流程图的自动拼接。
+              </li>
             </ul>
           </div>
           <div class="work-item">
@@ -148,7 +152,10 @@ const lcfc = '/img/LCFC.jpg'
           <transition name="fade">
             <div v-show="showImages" class="paper-image-list">
               <div class="paper-image-wrapper">
-                <img :src="lcfc" alt="LCFC" class="paper-img paper-img-uniform"/>
+                <img :src="lcfc" alt="LCFC" class="paper-img paper-img-uniform" />
+              </div>
+              <div class="paper-image-wrapper">
+                <img :src="lcfcexit" alt="LCFC" class="paper-img paper-img-uniform" />
               </div>
             </div>
           </transition>
@@ -179,6 +186,7 @@ const lcfc = '/img/LCFC.jpg'
 
 .info-label {
   width: 120px;
+  flex-shrink: 0;
   font-weight: 600;
   color: var(--text, #fff);
   opacity: 0.85;
@@ -188,12 +196,18 @@ const lcfc = '/img/LCFC.jpg'
 }
 
 .info-value {
-  width: 600px;
+  flex: 1;
+  min-width: 0;
   color: rgba(255, 255, 255, 0.88);
   display: inline-block;
   text-align: left;
   word-break: break-all;
   margin-left: -15px;
+}
+
+.info-value--long {
+  width: auto;
+  max-width: 100%;
 }
 
 .panel__content {
@@ -274,15 +288,18 @@ const lcfc = '/img/LCFC.jpg'
   flex: 1 1 0;
   display: flex;
   justify-content: center;
-  /* Prevents images from being cut-off, assists in aspect ratio */
   min-width: 0;
+}
+
+.paper-image-wrapper--first {
+  margin-right: -300px;
 }
 
 .paper-img {
   max-width: 340px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(124, 92, 255, 0.11);
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   background: #fff;
   /* Remove height: auto for now, handled below */
 }
@@ -301,10 +318,12 @@ const lcfc = '/img/LCFC.jpg'
 .fade-leave-active {
   transition: opacity 0.28s;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
+
 .custom-link {
   display: inline-block;
   color: #7c5cff;
@@ -317,6 +336,7 @@ const lcfc = '/img/LCFC.jpg'
   box-shadow: 0 2px 8px rgba(124, 92, 255, 0.08);
   position: relative;
 }
+
 .custom-link:hover,
 .custom-link:focus {
   background: #7c5cff;
@@ -324,5 +344,204 @@ const lcfc = '/img/LCFC.jpg'
   text-decoration: none;
   box-shadow: 0 6px 24px rgba(124, 92, 255, 0.13);
   outline: none;
+}
+
+@media (max-width: 920px) {
+  .experience-section {
+    padding: 12px 16px;
+  }
+
+  .info-row {
+    font-size: 17px;
+    flex-wrap: wrap;
+  }
+
+  .info-label {
+    width: 100px;
+    font-size: 16px;
+  }
+
+  .info-value {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    font-size: 16px;
+    margin-left: -10px;
+  }
+
+  .work-title {
+    font-size: 17px;
+  }
+
+  .work-list li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .paper-img {
+    max-width: 280px;
+  }
+
+  .paper-img-uniform {
+    max-height: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 10px 12px;
+    margin: 12px 0 0 0;
+    border-radius: 12px;
+  }
+
+  .info-row {
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .info-label {
+    width: auto;
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .info-value {
+    width: 100%;
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .work-content {
+    margin-top: 12px;
+    padding-left: 4px;
+  }
+
+  .work-item {
+    margin-bottom: 14px;
+  }
+
+  .work-title {
+    font-size: 15px;
+    padding-left: 8px;
+  }
+
+  .work-list {
+    padding-left: 18px;
+  }
+
+  .work-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .collapse-panel {
+    margin-top: 14px;
+  }
+
+  .collapse-toggle {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+
+  .paper-image-list {
+    gap: 16px;
+  }
+
+  .paper-img {
+    max-width: 220px;
+  }
+
+  .paper-img-uniform {
+    max-height: 160px;
+    height: 160px;
+  }
+
+  .custom-link {
+    font-size: 13px;
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 8px 10px;
+    margin: 10px 0 0 0;
+    border-radius: 10px;
+  }
+
+  .info-row {
+    font-size: 13px;
+  }
+
+  .info-label {
+    font-size: 13px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .work-content {
+    margin-top: 10px;
+    padding-left: 2px;
+  }
+
+  .work-item {
+    margin-bottom: 12px;
+  }
+
+  .work-title {
+    font-size: 14px;
+    padding-left: 6px;
+    border-left-width: 2px;
+  }
+
+  .work-list {
+    padding-left: 14px;
+  }
+
+  .work-list li {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+
+  .collapse-panel {
+    margin-top: 10px;
+  }
+
+  .collapse-toggle {
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .paper-image-list {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paper-image-wrapper {
+    width: 100%;
+  }
+
+  .paper-img {
+    max-width: 100%;
+  }
+
+  .paper-img-uniform {
+    max-height: 140px;
+    height: 140px;
+  }
+
+  .custom-link {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
 }
 </style>

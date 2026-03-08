@@ -515,4 +515,148 @@ const csdnUrl = 'https://blog.csdn.net/qq_45729306?spm=1000.2115.3001.5343'
     text-align: left;
   }
 }
+
+@media (max-width: 768px) {
+  .about-cards-row {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .about-info-card,
+  .about-panels {
+    padding: 16px 12px;
+  }
+
+  .about-info-avatar {
+    width: 160px;
+    height: 200px;
+  }
+
+  .about-avatar-img {
+    width: 160px;
+    height: 200px;
+  }
+
+  .info-row {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .info-label {
+    width: 90px;
+    font-size: 15px;
+  }
+
+  .info-value {
+    font-size: 15px;
+    margin-left: -8px;
+  }
+
+  .about-contact {
+    padding: 16px 12px;
+  }
+
+  .contact-grid {
+    gap: 10px;
+  }
+
+  .contact-card {
+    padding: 12px 10px;
+    gap: 10px;
+  }
+
+  .contact-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-card__label {
+    font-size: 11px;
+  }
+
+  .contact-card__value {
+    font-size: 13px;
+  }
+
+  .contact-toast {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-info-card,
+  .about-panels {
+    padding: 12px 8px;
+    border-radius: 12px;
+  }
+
+  .about-info-avatar {
+    width: 120px;
+    height: 150px;
+  }
+
+  .about-avatar-img {
+    width: 120px;
+    height: 150px;
+    border-radius: 12px;
+  }
+
+  .info-row {
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  .info-label {
+    width: 80px;
+    font-size: 13px;
+  }
+
+  .info-value {
+    font-size: 13px;
+    margin-left: -5px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .about-contact {
+    padding: 12px 8px;
+    border-radius: 12px;
+  }
+
+  .contact-card {
+    padding: 10px 8px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .contact-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-card__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact-card__label {
+    font-size: 10px;
+  }
+
+  .contact-card__value {
+    font-size: 12px;
+  }
+
+  .contact-card__go svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .contact-toast {
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 16px;
+  }
+}
 </style>

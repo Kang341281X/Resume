@@ -23,7 +23,7 @@ const projects: Project[] = [
       '采用AdamW优化器搭配SmoothL1交叉熵损失，实现学习率预热与余弦退火联合调度策略，有效规避训练初期梯度震荡问题，加速模型收敛并增强训练稳定性；',
       '采集多角度、多光照条件下的表情样本，构建复杂场景私有数据集以增强模型训练效果，增强模型的泛化性。'
     ],
-    image: '/img/表情识别结果.jpg'
+    image: new URL('../assets/img/表情识别结果.jpg', import.meta.url).href
   }
 ]
 
@@ -48,7 +48,7 @@ function toggleImage(index: number) {
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">项目：</span>
-          <span class="info-value" style="width: 950px;">{{ p.name }}</span>
+          <span class="info-value">{{ p.name }}</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">角色：</span>
@@ -103,6 +103,7 @@ function toggleImage(index: number) {
 
 .info-label {
   width: 80px;
+  flex-shrink: 0;
   font-weight: 600;
   color: var(--text, #fff);
   opacity: 0.85;
@@ -112,7 +113,8 @@ function toggleImage(index: number) {
 }
 
 .info-value {
-  width: 600px;
+  flex: 1;
+  min-width: 0;
   color: rgba(255, 255, 255, 0.88);
   display: inline-block;
   text-align: left;
@@ -211,5 +213,166 @@ function toggleImage(index: number) {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 920px) {
+  .project-section {
+    padding: 10px 16px;
+  }
+
+  .info-row {
+    font-size: 17px;
+    flex-wrap: wrap;
+  }
+
+  .info-label {
+    width: 70px;
+    font-size: 16px;
+  }
+
+  .info-value {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    font-size: 16px;
+    margin-left: -10px;
+  }
+
+  .work-title {
+    font-size: 17px;
+  }
+
+  .work-list li {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .paper-img {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-section {
+    padding: 10px 12px;
+    margin: 12px 0 0 0;
+    border-radius: 12px;
+  }
+
+  .info-row {
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .info-label {
+    width: auto;
+    font-size: 14px;
+  }
+
+  .info-value {
+    width: 100%;
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .work-content {
+    margin-top: 12px;
+    padding-left: 4px;
+  }
+
+  .work-title {
+    font-size: 15px;
+    padding-left: 8px;
+  }
+
+  .work-list {
+    padding-left: 18px;
+  }
+
+  .work-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .collapse-panel {
+    margin-top: 14px;
+  }
+
+  .collapse-toggle {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+
+  .paper-img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-section {
+    padding: 8px 10px;
+    margin: 10px 0 0 0;
+    border-radius: 10px;
+  }
+
+  .info-row {
+    font-size: 13px;
+  }
+
+  .info-label {
+    font-size: 13px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .work-content {
+    margin-top: 10px;
+    padding-left: 2px;
+  }
+
+  .work-item {
+    margin-bottom: 12px;
+  }
+
+  .work-title {
+    font-size: 14px;
+    padding-left: 6px;
+    border-left-width: 2px;
+  }
+
+  .work-list {
+    padding-left: 14px;
+  }
+
+  .work-list li {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+
+  .collapse-panel {
+    margin-top: 10px;
+  }
+
+  .collapse-toggle {
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .paper-image-list {
+    gap: 10px;
+  }
+
+  .paper-img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
 }
 </style>

@@ -15,9 +15,9 @@ const hobbies = [
   {
     name: '羽毛球',
     icon: '🏸',
-    desc: '坚持羽毛球运动三年，每周进行一两次羽毛球运动，曾获得安徽大学人工智能学院第二届“智羽杯”团体冠军。',
+    desc: '坚持羽毛球运动三年，每周进行一两次羽毛球运动，曾获得安徽大学人工智能学院第二届"智羽杯"团体冠军。',
     showImage: true,
-    img: 'public/img/智羽杯奖牌.jpg'
+    img: new URL('../assets/img/智羽杯奖牌.jpg', import.meta.url).href
   },
   {
     name: '健身',
@@ -236,6 +236,146 @@ const toggleShowImage = (index: number) => {
   }
   .paper-img {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  .experience-section {
+    padding: 12px 16px;
+  }
+
+  .info-row {
+    font-size: 17px;
+  }
+
+  .info-value {
+    font-size: 16px;
+  }
+
+  .hobby-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+
+  .hobby-icon span {
+    font-size: 1.8rem;
+  }
+
+  .blog-link-btn {
+    font-size: 15px;
+    padding: 4px 14px;
+  }
+
+  .paper-img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 10px 12px;
+    margin: 8px 0 0 0;
+    border-radius: 12px;
+  }
+
+  .panel__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hobby-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .hobby-icon span {
+    font-size: 1.6rem;
+  }
+
+  .info-row {
+    font-size: 15px;
+  }
+
+  .info-value {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .blog-link-btn {
+    font-size: 14px;
+    padding: 4px 12px;
+    margin-left: 0;
+  }
+
+  .collapse-panel {
+    margin-top: 12px;
+  }
+
+  .collapse-toggle {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+
+  .paper-img {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 8px 10px;
+    margin: 6px 0 0 0;
+    border-radius: 10px;
+  }
+
+  .hobby-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+
+  .hobby-icon span {
+    font-size: 1.4rem;
+  }
+
+  .info-row {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .blog-link-btn {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
+  .collapse-panel {
+    margin-top: 10px;
+  }
+
+  .collapse-toggle {
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .paper-image-list {
+    gap: 10px;
+  }
+
+  .paper-img {
+    max-width: 100%;
+    border-radius: 8px;
   }
 }
 </style>
