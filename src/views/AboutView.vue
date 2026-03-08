@@ -384,7 +384,7 @@ const csdnUrl = 'https://blog.csdn.net/qq_45729306?spm=1000.2115.3001.5343'
 
 .contact-card__go {
   color: rgba(255, 255, 255, 0.6);
-  transition: transform 160ms.ease, color 160ms.ease;
+  transition: transform 160ms ease, color 160ms ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -585,6 +585,7 @@ const csdnUrl = 'https://blog.csdn.net/qq_45729306?spm=1000.2115.3001.5343'
 }
 
 @media (max-width: 480px) {
+
   .about-info-card,
   .about-panels {
     padding: 12px 8px;
