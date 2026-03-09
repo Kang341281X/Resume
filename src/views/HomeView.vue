@@ -12,8 +12,10 @@ const router = useRouter()
 
 const cards: Card[] = [
   { title: '关于我', desc: '一句话自我介绍、优势与标签', icon: '👤', to: '/about' },
-  { title: '经历', desc: '科研、教育、工作经历', icon: '📚', to: '/experience' },
-  { title: '项目', desc: '代表作品、亮点与截图入口', icon: '🧩', to: '/projects' },
+  { title: '科研经历', desc: '论文发表、专利申请等', icon: '🔬', to: '/research' },
+  { title: '实习经历', desc: '工作实习、项目实践', icon: '💼', to: '/internship' },
+  { title: '竞赛经历', desc: '各类竞赛获奖情况', icon: '🏆', to: '/competition' },
+  // { title: '项目', desc: '代表作品、亮点与截图入口', icon: '🧩', to: '/projects' },
   { title: '兴趣爱好', desc: '运动、阅读、摄影等', icon: '✨', to: '/hobbies' },
 ]
 

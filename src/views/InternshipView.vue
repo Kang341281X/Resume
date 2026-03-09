@@ -1,83 +1,76 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-type Project = {
-  time: string
-  name: string
-  role: string
-  details: string[]
-  image?: string
-}
+const showImages = ref(false)
 
-const showImages = ref<boolean[]>([])
-
-const projects: Project[] = [
-  {
-    time: '2024.10 - 2025.3',
-    name: '智教领航私有人脸表情识别系统',
-    role: '算法优化',
-    details: [
-      '基于YOLO11-cls分类骨干网络，构建多尺度模型变体（Small、Medium、Large、XLarge），通过调节网络深度、宽度与最大通道数参数平衡模型精度与效率，针对表情分类任务优化分类头，以适配六类表情识别任务；',
-      '设计两段式模型推理链路：首先使用YOLOv11进行人脸检测与定位，然后对检测区域使用基于波动方程的全局建模机制进行特征捕捉与分类，使第二阶段的自注意力机制复杂度降低为 O(NlogN)，准确率提升约10%；',
-      '引入Dropout与L2正则化双重约束抑制过拟合，使用数据增强策略丰富样本分布，启用混合精度训练实现显存占用降低约40%，增强实时摄像头检测、视频图片文件和服务器端批量文件处理等不同场景下的速度与精度；',
-      '采用AdamW优化器搭配SmoothL1交叉熵损失，实现学习率预热与余弦退火联合调度策略，有效规避训练初期梯度震荡问题，加速模型收敛并增强训练稳定性；',
-      '采集多角度、多光照条件下的表情样本，构建复杂场景私有数据集以增强模型训练效果，增强模型的泛化性。'
-    ],
-    image: new URL('../assets/img/表情识别结果.jpg', import.meta.url).href
-  }
-]
-
-projects.forEach((_, i) => {
-  showImages.value[i] = false
-})
-
-function toggleImage(index: number) {
-  showImages.value[index] = !showImages.value[index]
-}
+import lcfc from '../assets/img/LCFC.jpg'
+import lcfcexit from '../assets/img/实习证明.jpg'
 </script>
 
 <template>
   <section class="page">
-    <div v-for="(p, index) in projects" :key="p.name" class="project-section">
+    <div class="experience-section">
       <div class="panel__content">
         <div class="info-row" style="align-items: flex-start;">
+          <span class="info-label">公司：</span>
+          <span class="info-value info-value--long">
+            联宝电子科技有限公司
+          </span>
+        </div>
+        <div class="info-row" style="align-items: flex-start;">
+          <span class="info-label">职位：</span>
+          <span class="info-value">AI Agent算法实习生</span>
+        </div>
+        <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">时间：</span>
-          <span class="info-value">{{ p.time }}</span>
-        </div>
-        <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">项目：</span>
-          <span class="info-value">{{ p.name }}</span>
-        </div>
-        <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">角色：</span>
-          <span class="info-value">{{ p.role }}</span>
+          <span class="info-value">2025.12 - 2026.3</span>
         </div>
         <div class="work-content">
-          <div class="work-title">工作内容：</div>
-          <ul class="work-list">
-            <li v-for="(detail, index) in p.details" :key="index">{{ detail }}</li>
-          </ul>
+          <div class="work-item">
+            <div class="work-title">工作内容一：工业大脑之流程编排系统优化</div>
+            <ul class="work-list">
+              <li>
+                参与搭建并落地由LLM驱动的贴标机流程自动化生成系统，实现Agent统一编排自动化流程：配置驱动的LLM→Mermaid→MBC.MCP渲染流水线，批量生成1–7种标签贴取JSON流程文件并自动输出可视化报告；
+              </li>
+              <li>
+                构建7步Prompt思维链和few-shot引导，针对Mermaid输出引入MermaidChecker做样式完整性校验，并叠加Mermaid语法校验与错误重试机制，降低LLM生成流程的"不可渲染、格式漂移和流程不守恒"概率；
+              </li>
+              <li>
+                实现批量任务并发生成与可视化报告自动汇总，基于ProcessPoolExecutor实现多任务并发调度，支持批量生成不同数量标签的贴取流程，并编写工具脚本将Mermaid解析为动作序列，最终完成多张流程图的自动拼接。
+              </li>
+            </ul>
+          </div>
+          <div class="work-item">
+            <div class="work-title">工作内容二：标签对比算法设计与优化</div>
+            <ul class="work-list">
+              <li>设计基于余弦相似度的JSON标签文件对比工具：将动作集名称做字符级向量化，并统一词表维度，以阈值筛选最佳匹配动作对，在实现"语义相似匹配"的同时仍能稳定完成跨文件的参数属性对比；</li>
+              <li>设计标签文件中相同动作集参数的自对比，为Prompt优化提供可量化的动态参数偏差依据，降低人工校验成本。</li>
+            </ul>
+          </div>
         </div>
-        <div v-if="p.image" class="collapse-panel">
-          <button class="collapse-toggle" @click="toggleImage(index)">
-            {{ showImages[index] ? '收起图片 ▲' : '展开图片 ▼' }}
+
+        <div class="collapse-panel">
+          <button class="collapse-toggle" @click="showImages = !showImages">
+            {{ showImages ? '收起图片 ▲' : '展开图片 ▼' }}
           </button>
           <transition name="fade">
-            <div v-show="showImages[index]" class="paper-image-list">
+            <div v-show="showImages" class="paper-image-list">
               <div class="paper-image-wrapper">
-                <img :src="p.image" :alt="p.name" class="paper-img paper-img-uniform" />
+                <img :src="lcfc" alt="LCFC" class="paper-img paper-img-uniform" />
+              </div>
+              <div class="paper-image-wrapper">
+                <img :src="lcfcexit" alt="实习证明" class="paper-img paper-img-uniform" />
               </div>
             </div>
           </transition>
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
 <style scoped>
-.project-section {
+.experience-section {
   display: flex;
   align-items: center;
   margin: 15px 0 0 0;
@@ -88,10 +81,6 @@ function toggleImage(index: number) {
   box-shadow: 0 10px 32px rgba(124, 92, 255, 0.03);
 }
 
-.panel__content {
-  color: rgba(255, 255, 255, 0.72);
-}
-
 .info-row {
   display: flex;
   align-items: center;
@@ -100,7 +89,7 @@ function toggleImage(index: number) {
 }
 
 .info-label {
-  width: 80px;
+  width: 120px;
   flex-shrink: 0;
   font-weight: 600;
   color: var(--text, #fff);
@@ -120,9 +109,27 @@ function toggleImage(index: number) {
   margin-left: -15px;
 }
 
+.info-value--long {
+  width: auto;
+  max-width: 100%;
+}
+
+.panel__content {
+  color: rgba(255, 255, 255, 0.72);
+  width: 100%;
+}
+
 .work-content {
   margin-top: 16px;
   padding-left: 8px;
+}
+
+.work-item {
+  margin-bottom: 18px;
+}
+
+.work-item:last-child {
+  margin-bottom: 0;
 }
 
 .work-title {
@@ -141,7 +148,7 @@ function toggleImage(index: number) {
 }
 
 .work-list li {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.78);
   margin-bottom: 8px;
@@ -188,8 +195,12 @@ function toggleImage(index: number) {
   min-width: 0;
 }
 
+.paper-image-wrapper--first {
+  margin-right: -300px;
+}
+
 .paper-img {
-  width: 750px;
+  max-width: 340px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(124, 92, 255, 0.11);
   border: 1px solid rgba(255, 255, 255, 0.10);
@@ -197,7 +208,9 @@ function toggleImage(index: number) {
 }
 
 .paper-img-uniform {
-  height: auto;
+  max-height: 240px;
+  height: 240px;
+  width: auto;
   object-fit: contain;
   object-position: top center;
   display: block;
@@ -214,8 +227,8 @@ function toggleImage(index: number) {
 }
 
 @media (max-width: 920px) {
-  .project-section {
-    padding: 10px 16px;
+  .experience-section {
+    padding: 12px 16px;
   }
 
   .info-row {
@@ -224,7 +237,7 @@ function toggleImage(index: number) {
   }
 
   .info-label {
-    width: 70px;
+    width: 100px;
     font-size: 16px;
   }
 
@@ -241,18 +254,22 @@ function toggleImage(index: number) {
   }
 
   .work-list li {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
   }
 
   .paper-img {
-    width: 100%;
-    max-width: 600px;
+    max-width: 280px;
+  }
+
+  .paper-img-uniform {
+    max-height: 200px;
+    height: 200px;
   }
 }
 
 @media (max-width: 768px) {
-  .project-section {
+  .experience-section {
     padding: 10px 12px;
     margin: 12px 0 0 0;
     border-radius: 12px;
@@ -268,6 +285,7 @@ function toggleImage(index: number) {
   .info-label {
     width: auto;
     font-size: 14px;
+    margin-right: 0;
   }
 
   .info-value {
@@ -279,6 +297,10 @@ function toggleImage(index: number) {
   .work-content {
     margin-top: 12px;
     padding-left: 4px;
+  }
+
+  .work-item {
+    margin-bottom: 14px;
   }
 
   .work-title {
@@ -305,13 +327,22 @@ function toggleImage(index: number) {
     font-size: 14px;
   }
 
+  .paper-image-list {
+    gap: 16px;
+  }
+
   .paper-img {
-    max-width: 100%;
+    max-width: 220px;
+  }
+
+  .paper-img-uniform {
+    max-height: 160px;
+    height: 160px;
   }
 }
 
 @media (max-width: 480px) {
-  .project-section {
+  .experience-section {
     padding: 8px 10px;
     margin: 10px 0 0 0;
     border-radius: 10px;
@@ -366,11 +397,21 @@ function toggleImage(index: number) {
 
   .paper-image-list {
     gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paper-image-wrapper {
+    width: 100%;
   }
 
   .paper-img {
     max-width: 100%;
-    border-radius: 8px;
+  }
+
+  .paper-img-uniform {
+    max-height: 140px;
+    height: 140px;
   }
 }
 </style>

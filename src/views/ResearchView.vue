@@ -1,16 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-// 折叠面板状态
 const showAaaaiImages = ref(false)
-const showImages = ref(false)
 
-// 图片资源路径
 import aaaai1 from '../assets/img/AAAI1.jpg'
 import aaaai2 from '../assets/img/AAAI2.jpg'
-import lcfc from '../assets/img/LCFC.jpg'
-import lcfcexit from '../assets/img/实习证明.jpg'
-
 </script>
 
 <template>
@@ -31,20 +25,37 @@ import lcfcexit from '../assets/img/实习证明.jpg'
           <span class="info-label">状态：</span>
           <span class="info-value">已收录</span>
         </div>
-        <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">方向：</span>
-          <span class="info-value">深度学习、计算机视觉、图像恢复、压缩伪影去除</span>
+
+        <div class="work-content">
+          <div class="work-item">
+            <div class="work-title">科研经历</div>
+            <ul class="work-list">
+              <li>设计频域混合专家（FMoE）模块，将四种频域变换（DCT、FFT、DWT 和
+                SWT）集成到混合专家网络（MoE）中，通过稀疏激活策略自适应选择最优专家分支对不同类型压缩伪影进行处理，实现高效图像压缩伪影去除；</li>
+              <li>设计频域感知因子（FAF）在频域维度对图像特征进行自适应处理，并通过逆变换将特征映射回空间域；</li>
+              <li>使用 VTM-20.0 编解码器构建基于 H.266/VVC
+                标准下的压缩伪影数据集（VVC-CAR），该数据集涵盖四种量化参数（QP=22、27、32、37）的压缩伪影，为模型训练和测试提供更具挑战性的真实场景数据。</li>
+            </ul>
+          </div>
+          <div class="work-item">
+            <div class="work-title">贡献</div>
+            <ul class="work-list">
+              <li>提出 ARMoE 模型，通过对四种频域专家模块与稀疏激活策略的结合，实现对多类型复杂压缩伪影的自适应去除，相比现有方法显著提升图像恢复质量；</li>
+              <li>构建 VVC-CAR 数据集，填补了 H.266/VVC 压缩伪影数据集的空白，为后续研究提供了标准化数据基础。</li>
+            </ul>
+          </div>
         </div>
+
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">网址：</span>
-          <span class="info-value">
+          <span class="info-label">GitHub：</span>
+          <span class="info-value" style="margin-left: -20px;">
             <a href="https://github.com/Kang341281X/ARMoE" target="_blank" rel="noopener noreferrer"
               class="custom-link">
               https://github.com/Kang341281X/ARMoE
             </a>
           </span>
         </div>
-        <!-- 折叠图片面板 -->
+
         <div class="collapse-panel">
           <button class="collapse-toggle" @click="showAaaaiImages = !showAaaaiImages">
             {{ showAaaaiImages ? '收起图片 ▲' : '展开图片 ▼' }}
@@ -77,11 +88,34 @@ import lcfcexit from '../assets/img/实习证明.jpg'
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">状态：</span>
-          <span class="info-value">投稿中</span>
+          <span class="info-value">第二阶段审稿中</span>
         </div>
+
+        <div class="work-content">
+          <div class="work-item">
+            <div class="work-title">科研经历</div>
+            <ul class="work-list">
+              <li>设计长距离多头自注意力（LMSA）模块，通过沿水平和垂直方向建立长距离依赖关系扩展感受野，实现跨区域的上下文信息交互，从而增强模型对全局结构和远程特征的捕捉能力；</li>
+              <li>将离散傅里叶变换（DFT）集成到前馈网络中，构建离散傅里叶门控前馈神经网络（FGFN），在频域维度对特征进行自适应调制，并通过门控机制结合空间局部信息，提升全局纹理和高频细节捕捉能力。</li>
+            </ul>
+          </div>
+          <div class="work-item">
+            <div class="work-title">贡献</div>
+            <ul class="work-list">
+              <li>设计 LMSA 模块，实现线性复杂度的长程依赖建模，有效解决轻量化注意力网络的性能瓶颈；</li>
+              <li>设计 FGFN 模块，利用频域门控操作替代传统 FFN，在减少参数量的同时增强模型表达能力。</li>
+            </ul>
+          </div>
+        </div>
+
         <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">方向：</span>
-          <span class="info-value">深度学习、计算机视觉、图像恢复、轻量级图像超分辨率</span>
+          <span class="info-label">GitHub：</span>
+          <span class="info-value" style="margin-left: -20px;">
+            <a href="https://github.com/Kang341281X/LFTNet" target="_blank" rel="noopener noreferrer"
+              class="custom-link">
+              https://github.com/Kang341281X/LFTNet
+            </a>
+          </span>
         </div>
       </div>
     </div>
@@ -96,69 +130,13 @@ import lcfcexit from '../assets/img/实习证明.jpg'
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">状态：</span>
-          <span class="info-value">初审阶段，NO.202511956170.1</span>
+          <span class="info-value">专利投稿中，公开阶段</span>
         </div>
-      </div>
-    </div>
+        <div class="info-row" style="align-items: flex-start;">
+          <span class="info-label">申请号：</span>
+          <span class="info-value">202511956170.1</span>
+        </div>
 
-    <br />
-
-    <h1 class="page__title">实习经历</h1>
-    <div class="experience-section">
-      <div class="panel__content">
-        <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">公司：</span>
-          <span class="info-value info-value--long">
-            联宝电子科技有限公司
-          </span>
-        </div>
-        <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">职位：</span>
-          <span class="info-value">AI Agent算法实习生</span>
-        </div>
-        <div class="info-row" style="align-items: flex-start;">
-          <span class="info-label">时间：</span>
-          <span class="info-value">2025.12 - 2026.3</span>
-        </div>
-        <div class="work-content">
-          <div class="work-item">
-            <div class="work-title">工作内容一：工业大脑之流程编排系统优化</div>
-            <ul class="work-list">
-              <li>
-                参与搭建并落地由LLM驱动的贴标机流程自动化生成系统，实现Agent统一编排自动化流程：配置驱动的LLM→Mermaid→MBC.MCP渲染流水线，批量生成1–7种标签贴取JSON流程文件并自动输出可视化报告；
-              </li>
-              <li>
-                构建7步Prompt思维链和few-shot引导，针对Mermaid输出引入MermaidChecker做样式完整性校验，并叠加Mermaid语法校验与错误重试机制，降低LLM生成流程的"不可渲染、格式漂移和流程不守恒"概率；
-              </li>
-              <li>
-                实现批量任务并发生成与可视化报告自动汇总，基于ProcessPoolExecutor实现多任务并发调度，支持批量生成不同数量标签的贴取流程，并编写工具脚本将Mermaid解析为动作序列，最终完成多张流程图的自动拼接。
-              </li>
-            </ul>
-          </div>
-          <div class="work-item">
-            <div class="work-title">工作内容二：标签对比算法设计与优化</div>
-            <ul class="work-list">
-              <li>设计基于余弦相似度的JSON标签文件对比工具：将动作集名称做字符级向量化，并统一词表维度，以阈值筛选最佳匹配动作对，在实现"语义相似匹配"的同时仍能稳定完成跨文件的参数属性对比；</li>
-              <li>设计标签文件中相同动作集参数的自对比，为Prompt优化提供可量化的动态参数偏差依据，降低人工校验成本。</li>
-            </ul>
-          </div>
-        </div>
-        <!-- 折叠图片面板 -->
-        <div class="collapse-panel">
-          <button class="collapse-toggle" @click="showImages = !showImages">
-            {{ showImages ? '收起图片 ▲' : '展开图片 ▼' }}
-          </button>
-          <transition name="fade">
-            <div v-show="showImages" class="paper-image-list">
-              <div class="paper-image-wrapper">
-                <img :src="lcfc" alt="LCFC" class="paper-img paper-img-uniform" />
-              </div>
-              <div class="paper-image-wrapper">
-                <img :src="lcfcexit" alt="LCFC" class="paper-img paper-img-uniform" />
-              </div>
-            </div>
-          </transition>
-        </div>
       </div>
     </div>
   </section>
@@ -201,7 +179,7 @@ import lcfcexit from '../assets/img/实习证明.jpg'
   display: inline-block;
   text-align: left;
   word-break: break-all;
-  margin-left: -15px;
+  margin-left: -40px;
 }
 
 .info-value--long {
@@ -211,6 +189,7 @@ import lcfcexit from '../assets/img/实习证明.jpg'
 
 .panel__content {
   color: rgba(255, 255, 255, 0.72);
+  width: 100%;
 }
 
 .work-content {
@@ -253,7 +232,6 @@ import lcfcexit from '../assets/img/实习证明.jpg'
   margin-bottom: 0;
 }
 
-/* 折叠按钮与图片样式 */
 .collapse-panel {
   margin-top: 18px;
 }
@@ -300,10 +278,8 @@ import lcfcexit from '../assets/img/实习证明.jpg'
   box-shadow: 0 4px 12px rgba(124, 92, 255, 0.11);
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: #fff;
-  /* Remove height: auto for now, handled below */
 }
 
-/* 保持图片高度一致且等比缩放 */
 .paper-img-uniform {
   max-height: 240px;
   height: 240px;

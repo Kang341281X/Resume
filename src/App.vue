@@ -23,14 +23,22 @@ const pdfUrl = new URL('./assets/简历.pdf', import.meta.url).href
           <span class="nav__icon" aria-hidden="true">👤</span>
           <span class="nav__text">关于我</span>
         </RouterLink>
-        <RouterLink class="nav__item" to="/experience" active-class="is-active">
-          <span class="nav__icon" aria-hidden="true">📚</span>
-          <span class="nav__text">经历</span>
+        <RouterLink class="nav__item" to="/research" active-class="is-active">
+          <span class="nav__icon" aria-hidden="true">🔬</span>
+          <span class="nav__text">科研经历</span>
         </RouterLink>
-        <RouterLink class="nav__item" to="/projects" active-class="is-active">
+        <RouterLink class="nav__item" to="/internship" active-class="is-active">
+          <span class="nav__icon" aria-hidden="true">💼</span>
+          <span class="nav__text">实习经历</span>
+        </RouterLink>
+        <RouterLink class="nav__item" to="/competition" active-class="is-active">
+          <span class="nav__icon" aria-hidden="true">🏆</span>
+          <span class="nav__text">竞赛经历</span>
+        </RouterLink>
+        <!-- <RouterLink class="nav__item" to="/projects" active-class="is-active">
           <span class="nav__icon" aria-hidden="true">🧩</span>
           <span class="nav__text">项目</span>
-        </RouterLink>
+        </RouterLink> -->
         <RouterLink class="nav__item" to="/hobbies" active-class="is-active">
           <span class="nav__icon" aria-hidden="true">✨</span>
           <span class="nav__text">兴趣爱好</span>
