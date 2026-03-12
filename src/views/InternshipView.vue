@@ -14,7 +14,7 @@ import lcfcexit from '../assets/img/实习证明.jpg'
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">公司：</span>
           <span class="info-value info-value--long">
-            联宝电子科技有限公司
+            联宝科技
           </span>
         </div>
         <div class="info-row" style="align-items: flex-start;">

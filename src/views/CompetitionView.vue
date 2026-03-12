@@ -42,6 +42,8 @@ const showCompetitionImage = ref(false)
             <transition name="fade">
               <div v-show="showCompetitionImage" class="competition-image-wrapper">
                 <img src="../assets/img/竞赛证书.png" alt="竞赛图片" class="competition-image" />
+                <img src="../assets/img/表情识别结果.jpg" alt="竞赛图片" class="competition-image"
+                  style="width: 500px; margin-left: 50px;" />
               </div>
             </transition>
           </div>

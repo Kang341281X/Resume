@@ -84,7 +84,7 @@ import aaaai2 from '../assets/img/AAAI2.jpg'
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">会议：</span>
-          <span class="info-value">IJCAI 2026（CCF A 类顶会，本人一作）</span>
+          <span class="info-value">IJCAI 2026（CCF A 类顶会）</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">状态：</span>
@@ -95,7 +95,7 @@ import aaaai2 from '../assets/img/AAAI2.jpg'
           <div class="work-item">
             <div class="work-title">科研经历</div>
             <ul class="work-list">
-              <li>设计长距离多头自注意力（LMSA）模块，通过沿水平和垂直方向建立长距离依赖关系扩展感受野，实现跨区域的上下文信息交互，从而增强模型对全局结构和远程特征的捕捉能力；</li>
+              <li>设计长距离多头自注意力（LMSA）模块，通过沿水平和垂直方向建立长距离依赖关系扩展特征扫描区域，实现跨区域的上下文信息交互，从而增强模型对全局结构和远程特征的捕捉能力；</li>
               <li>将离散傅里叶变换（DFT）集成到前馈网络中，构建离散傅里叶门控前馈神经网络（FGFN），在频域维度对特征进行自适应调制，并通过门控机制结合空间局部信息，提升全局纹理和高频细节捕捉能力。</li>
             </ul>
           </div>

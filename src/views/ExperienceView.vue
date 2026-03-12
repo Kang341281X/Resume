@@ -73,7 +73,7 @@ import lcfcexit from '../assets/img/实习证明.jpg'
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">会议：</span>
-          <span class="info-value">IJCAI 2026（CCF A 类顶会，本人一作）</span>
+          <span class="info-value">IJCAI 2026（CCF A 类顶会）</span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">状态：</span>
@@ -109,7 +109,7 @@ import lcfcexit from '../assets/img/实习证明.jpg'
         <div class="info-row" style="align-items: flex-start;">
           <span class="info-label">公司：</span>
           <span class="info-value info-value--long">
-            联宝电子科技有限公司
+            联宝科技
           </span>
         </div>
         <div class="info-row" style="align-items: flex-start;">
