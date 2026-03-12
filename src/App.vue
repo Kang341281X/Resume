@@ -45,9 +45,9 @@ const pdfUrl = new URL('src/assets/简历.pdf', import.meta.url).href
         </RouterLink>
       </nav>
 
-      <div class="sidebar-footer">
+      <!-- <div class="sidebar-footer">
         <a class="sidebar-footer__link" :href="pdfUrl" download="简历.pdf">下载简历</a>
-      </div>
+      </div> -->
     </aside>
 
     <main class="app-main">
