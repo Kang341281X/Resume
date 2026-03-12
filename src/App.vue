@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const pdfUrl = new URL('./assets/简历.pdf', import.meta.url).href
+const pdfUrl = new URL('src/assets/简历.pdf', import.meta.url).href
 </script>
 
 <template>
